@@ -137,6 +137,7 @@ func main() {
 	flag.StringVar(&kubeconfig, "kubeconfig", "", "absolute path to the kubeconfig file")
 	flag.StringVar(&master, "master", "", "master url")
 	flag.Parse()
+	flag.Set("logtostderr", "true")
 
 	// Create the client config. Use masterURL and kubeconfig if given, otherwise assume in-cluster.
 	config, err := clientcmd.BuildConfigFromFlags(master, kubeconfig)

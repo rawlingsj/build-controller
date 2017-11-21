@@ -65,5 +65,5 @@ clean:
 	rm -rf release
 
 .PHONY: docker
-docker: $(BUILD_DIR)/$(NAME)-linux-amd64
+docker: linux-build
 	docker build -t "${ORG}/$(NAME):dev" .
